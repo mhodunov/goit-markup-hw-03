@@ -11,6 +11,16 @@
 	--footer-background: #2f303a;
 }
 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 body {
 	color: var(--primary-text-color);
 	font-family: Roboto, sans-serif;
@@ -29,6 +39,29 @@ button {
 	font-family: inherit;
 }
 
+img {
+	display: block;
+}
+
+/*Utilities*/
+
+.list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	outline: solid 2px tomato;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+
+
+}
+
 /*Logo*/
 
 .logo {
@@ -39,42 +72,80 @@ button {
 	font-size: 26px;
 	line-height: 1.2;
 	text-decoration: none;
+	outline: solid 2px tomato;
 }
 
 .logo.logo-first {
 	color: var(--accent-color);
 }
+
 .logo.logo-footer {
 	color: var(--additional-color);
 }
+
 /*Navigation*/
 
-.site-nav,
+.main-nav {
+	display: flex;
+	align-items: center;
+}
+
+.site-nav {
+	display: flex;
+	margin-left: 75px;
+}
+
 .contacts {
+	display: flex;
+	margin-left: auto;
+}
+
+.site-nav-item {
+	margin-right: 50px;
+	outline: 2px solid tomato;
+}
+
+.site-nav-item:last-child {
+	margin-right: 0;
+}
+
+.contacts-item {
+	margin-right: 30px;
+	outline: solid 2px tomato;
+}
+
+.contacts-item:last-child {
+	margin-right: 0;
+}
+
+.site-nav-link,
+.contacts-link {
+	padding-top: 32px;
+	padding-bottom: 32px;
+	display: block;
+
 	font-weight: 500;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 	text-decoration: none;
 }
 
-.site-nav {
+.site-nav-link {
 	color: var(--secondary-text-color);
 }
 
-.contacts {
+.contacts-link {
 	color: var(--primary-text-color);
 }
 
-.site-nav:hover,
-.contacts:hover,
-.site-nav:focus,
-.contacts:focus {
+.site-nav-link:hover,
+.contacts-link:hover,
+.site-nav-link:focus,
+.contacts-link:focus {
 	color: var(--accent-color);
 }
 
-.list {
-	list-style: none;
-}
+
 
 /*Hero*/
 
@@ -85,10 +156,14 @@ button {
 }
 
 .hero-section {
+	padding-top: 200px;
+	padding-bottom: 200px;
 	background-color: var(--overlay-color);
 }
 
 .hero-title {
+	margin-top: 0;
+	margin-bottom: 30px;
 	font-weight: 900;
 	font-size: 44px;
 	line-height: 1.36;
@@ -99,6 +174,12 @@ button {
 /*Buttons*/
 
 .button {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	padding: 10px 32px;
+	min-width: 200px;
+
 	background-color: var(--additional-color);
 	color: var(--primary-text-color);
 	font-weight: 700;
@@ -107,6 +188,7 @@ button {
 	text-align: center;
 	letter-spacing: 0.06em;
 }
+
 .button.primary {
 	background-color: var(--accent-color);
 	color: var(--additional-color);
@@ -118,6 +200,7 @@ button {
 	line-height: 1.88;
 	letter-spacing: 0.03em;
 }
+
 .button.filter:hover,
 .button.filter:active,
 .button.filter:focus {
@@ -127,7 +210,14 @@ button {
 
 /*Section*/
 
+.section {
+	margin-top: 94px;
+}
+
 .section-title {
+	margin-top: 0;
+	margin-bottom: 50px;
+
 	color: var(--secondary-text-color);
 	font-weight: 700;
 	font-size: 36px;
@@ -136,6 +226,9 @@ button {
 }
 
 .section-title-description {
+	margin-top: 30px;
+	margin-bottom: 10px;
+
 	color: var(--secondary-text-color);
 	font-weight: 700;
 	font-size: 14px;
@@ -144,12 +237,46 @@ button {
 }
 
 .section-title-description.white {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	display: block;
+
 	background-color: var(--overlay-color);
 	color: var(--additional-color);
 	text-align: center;
 }
 
+/*Advantages*/
+
+.advantages {
+	display: flex;
+}
+
+.advantages-item:not(:last-child) {
+	margin-right: 30px;
+}
+
+/*Products*/
+
+.products {
+	display: flex;
+}
+
+.products-item:not(:last-child) {
+	margin-right: 30px;
+}
+
 /*Team*/
+
+.section-grey {
+	padding-top: 94px;
+	padding-bottom: 94px;
+	margin-top: 94px;
+
+	background-color: var(--secondary-background);
+}
 
 .team-member {
 	font-size: 16px;
@@ -160,6 +287,12 @@ button {
 .team-member.name {
 	color: var(--secondary-text-color);
 	font-weight: 500;
+}
+
+/*Clients*/
+
+.clients {
+	margin-top: 94px;
 }
 
 /*Portfolio*/
